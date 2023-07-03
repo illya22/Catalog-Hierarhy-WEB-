@@ -1,0 +1,25 @@
+﻿@model Catalog_Hierarhy.Models.CatalogViewModel
+@{
+    ViewData["Title"] = "Index catalog";
+}
+
+<h2>"Catalog" - @Model.Name</h2>
+
+ 
+
+
+<div class="sub-catalogs">
+     
+    @if (Model.Children.Count > 0)
+    {
+        @foreach (var item in Model.Children)
+        {
+            @Html.ActionLink(item.Name,"Index", "Catalog", new{ path = @Model.Path + "/" + item.Name})<br />
+        }
+    }
+    else
+    {
+        <h2>End</h2>
+    }
+
+</div>

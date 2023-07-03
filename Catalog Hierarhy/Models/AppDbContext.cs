@@ -9,11 +9,11 @@ namespace Catalog_Hierarhy.Models
         public DbSet<Catalog> Catalogs { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Catalog>()
-                .HasOne(c => c.Parent)
-                .WithMany(c => c.Children)
-                .HasForeignKey(c => c.ParentId)
-                .OnDelete(DeleteBehavior.Restrict);
+            //modelBuilder.Entity<Catalog>()
+            //    .HasOne(c => c.Parent)
+            //    .WithMany(c => c.Children)
+            //    .HasForeignKey(c => c.ParentId)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Catalog>().HasData(
                 new Catalog { Id = 1, Name = "Creating Digital Images" },
